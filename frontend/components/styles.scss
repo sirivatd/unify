@@ -14,3 +14,43 @@
   width: 50px;
   height: 50px;
 }
+
+.splash-image {
+  position: absolute;
+  top: 75px;
+  left: 0px;
+  width: 100%;
+}
+
+.header-title {
+  position: absolute;
+  top: 300px;
+  left: 150px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+}
+
+.sign-up-button {
+  position: absolute;
+  left: 150px;
+  top: 430px;
+  width: 200px;
+  height: 50px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 15px;
+  background-color: #4caf50;
+  border-radius: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #087f23;
+  }
+}
+
+br {
+  display: block; /* makes it have a width */
+  content: ""; /* clears default height */
+  margin-top: 10px; /* change this to whatever height you want it */
+}
