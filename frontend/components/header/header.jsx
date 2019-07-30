@@ -6,6 +6,43 @@ import './styles.scss';
 class Header extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClick, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClick, false);
+  }
+
+  showMenu() {
+    const menu = document.getElementsByClassName("account-settings-menu")[0];
+    menu.classList.toggle("hidden-menu");
+  }
+
+  handleClick(e) {
+    const button = document.getElementById("account-button");
+
+    if(
+      document
+        .getElementsByClassName("account-settings-menu")[0]
+        .contains(e.target) ||
+      button.contains(e.target)
+    ) {
+      return;
+    }
+    this.handleClickOutside();
+  }
+
+  handleClickOutside() {
+    const menu = document.getElementsByClassName("account-settings-menu")[0];
+    if (menu.classList.contains("hidden-menu")) {
+    } else {
+      menu.classList.toggle("hidden-menu");
+    }
   }
 
   render() {
@@ -18,12 +55,41 @@ class Header extends React.Component {
         <Link className="link" to="/signup">Sign up</Link>
       </nav>
     )
+
+    const accountSettings = () => (
+      <div className="account-settings-menu hidden-menu">
+        <div className="account-settings-stats">
+          <h3 className="account-settings-name">
+            {this.props.currentUser.first_name}{" "}
+            {this.props.currentUser.last_name}{" "}
+          </h3>
+          <h4 className="account-settings-email">
+            {this.props.currentUser.email_address}
+          </h4>
+        </div>
+        <hr className="account-setting-divider" />
+        <ul
+          className="account-settings-list"
+          onClick={() => this.props.logout(this.props.currentUser)}
+        >
+          <li className="account-settings-item">Logout</li>
+        </ul>
+      </div>
+    )
   
-    const personalGreeting = () => (
-      <hgroup className="header-group">
-        <h2 className="header-name">Hi, {this.props.currentUser.first_name}</h2>
-        <button className="header-button" onClick={this.props.logout}>Log Out</button>
-      </hgroup>
+    const accountLinks = () => (
+      <div>
+        {accountSettings()}
+        <hgroup className="header-group">
+          <button
+            id="account-button"
+            className="account-button"
+            onClick={this.showMenu}
+          >
+            Account
+          </button>
+        </hgroup>
+      </div>
     )
   
     return (
@@ -34,7 +100,7 @@ class Header extends React.Component {
           <img className="logo-img" src="https://i.ibb.co/tYRyxH5/unify-logo-white.png" />
   
         </div>
-        {this.props.currentUser ? personalGreeting() : sessionLinks()}
+        {this.props.currentUser ? accountLinks() : sessionLinks()}
       </div>
     )
   }
