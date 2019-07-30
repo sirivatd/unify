@@ -5,6 +5,7 @@ import LoginFormContainer from './session_form/login_form_container';
 import HeaderContainer from './header/header_container';
 import HomeContainer from './home/home';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import Landing from './landing/landing';
 
 import './styles.scss';
 
@@ -54,6 +55,7 @@ const App = () => (
     </header>
     <HeaderContainer />
       <Switch>
+        <AuthRoute exact path="/" component={Landing} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute exact path="/home" component={HomeContainer} />
