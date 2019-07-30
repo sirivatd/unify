@@ -4,6 +4,8 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      first_name: '',
+      last_name: '',
       email_address: '',
       password: ''
     };
@@ -38,12 +40,23 @@ class SignupForm extends React.Component {
     return (
       <div className="signup-form-container">
         <form onSubmit={this.handleSubmit} className="signup-form-box">
-          Welcome to Unify!
-          <br/>
-          Please Sign Up to continue or {this.props.navLink}
-          {this.renderErrors()}
           <div className="signup-form">
+            <label>First Name:
+              <input type="text"
+                value={this.state.first_name}
+                onChange={this.update('first_name')}
+                className="signup-input"
+              />
+            </label>
             <br/>
+            <label>Last Name:
+              <input type="text"
+                value={this.state.last_name}
+                onChange={this.update('last_name')}
+                className="signup-input"
+              />
+              <br/>
+            </label>
             <label>Email Address:
               <input type="text"
                 value={this.state.email_address}
@@ -59,6 +72,10 @@ class SignupForm extends React.Component {
                 className="signup-input"
               />
             </label>
+            <br/>
+            Already have an account? {this.props.navLink}
+            <br/>
+            {this.renderErrors()}
             <br/>
             <input className="signup-submit" type="submit" value="signup" />
           </div>
