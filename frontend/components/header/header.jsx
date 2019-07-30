@@ -81,12 +81,13 @@ class Header extends React.Component {
       <div>
         {accountSettings()}
         <hgroup className="header-group">
+          <Link className="link" to="/sell">Sell on Unify</Link>
           <button
             id="account-button"
             className="account-button"
             onClick={this.showMenu}
           >
-            Account
+            My Account
           </button>
         </hgroup>
       </div>
