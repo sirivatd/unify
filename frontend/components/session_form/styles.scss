@@ -1,83 +1,110 @@
-.login-form-container {
-  background-color: white;
-  border-radius: 15px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  box-shadow: 0 0 2px #ccc;
-  padding: 25vh;
+.img-container {
+  width: 50%;
+  height: 100vh;
 }
 
-.signup-form-container {
-  background-color: white;
-  border-radius: 15px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  box-shadow: 0 0 2px #ccc;
-  padding: 25vh;
-  max-height: 200px;
-  z-index: 5;
+.login-image {
+  max-width: 100%;
+  height: 100vh;
 }
 
-.signup-form {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  z-index: 5;
-}
-
-.signup-input {
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  margin-left: 10px;
-}
-
-.signup-submit {
-  width: 200px;
-  height: 50px;
-  font-family: 'Raleway', sans-serif;
-  color: white;
-  font-size: 15px;
-  background-color: #4caf50;
-  border-radius: 15px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #087f23;
-  }
+.login-form-box {
+  width: 50%;
+  height: 100%;
+  margin-left: 50px;
+  margin-top: 200px;
 }
 
 .login-form-container {
-  z-index: 5;
+  display: flex;
+  justify-content: center;
+  height: 100%;
 }
 
-.login-form {
-  font-family: 'Montserrat', san-serif;
-  font-size: 20px;
-  z-index: 5;
+.login-header {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 30px;
+}
+
+.email-text {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 130px;
+}
+
+.password-text {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 130px;
 }
 
 .login-input {
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  margin-left: 30px;
+  width: 70%;
+  height: 48px;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: #fafafa;
+  padding-left: 20px;
+  font-size: 17px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.login-input:hover {
+  border-color: #cbcbcd;
+}
+
+.login-input:focus {
+  border-color: #00e676;
+  outline: none;
 }
 
 .login-submit {
-  width: 200px;
-  height: 50px;
-  font-family: 'Raleway', sans-serif;
+  width: 140px;
+  height: 48px;
+  background-color: #00b248;
+  font-family: "Source Sans Pro", sans-serif;
   color: white;
+  border-radius: 5px;
+  border: none;
   font-size: 15px;
-  background-color: #4caf50;
-  border-radius: 15px;
   cursor: pointer;
+  margin-top: 30px;
+}
 
-  &:hover {
-    background-color: #087f23;
-  }
+.login-submit:hover {
+  background-color: #1ae9aa;
+}
+
+.demo-link {
+  font-family: "Source Sans Pro", sans-serif;
+  text-decoration: none;
+  color: #21ce99;
+}
+
+.demo-link:hover {
+  color: #1ae9aa;
+}
+
+.demo-button {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: white;
+  border: none;
+  color: #21ce99;
+  font-size: 15px;
+}
+
+.demo-button:hover {
+  color: #1ae9aa;
+}
+
+.error-list li {
+  display: inline;
+  padding-right: 6px;
+  padding-left: 25px;
+}
+
+.error-list .error-text {
+  background-image: url("http://icons.iconarchive.com/icons/custom-icon-design/mono-general-1/512/alert-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: "Source Sans Pro", sans-serif;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import './styles.scss';
 
@@ -39,14 +40,21 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
+        <div className="img-container">
+        <img
+            className="login-image"
+            src="https://i.ibb.co/LYcZSBt/login-cover.png"
+            alt="A plain green background"
+          />
+        </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Unify!
+        <label className="login-header">Welcome back to Unify.</label>
           <br/>
-          Please login to continue or {this.props.navLink}
+          Don't have an account? {this.props.navLink}
           {this.renderErrors()}
           <div className="login-form">
             <br/>
-            <label>Email Address:
+            <label className="email-text">Email Address:
               <input type="text"
                 value={this.state.email_address}
                 onChange={this.update('email_address')}
@@ -54,7 +62,7 @@ class LoginForm extends React.Component {
               />
             </label>
             <br/>
-            <label>Password:
+            <label className="password-text">Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
@@ -62,7 +70,7 @@ class LoginForm extends React.Component {
               />
             </label>
             <br/>
-            <input className="login-submit" type="submit" value="login" />
+            <input className="login-submit" type="submit" value="Login" />
           </div>
         </form>
       </div>
@@ -70,4 +78,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
