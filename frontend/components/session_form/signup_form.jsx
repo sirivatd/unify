@@ -40,44 +40,47 @@ class SignupForm extends React.Component {
     return (
       <div className="signup-form-container">
         <form onSubmit={this.handleSubmit} className="signup-form-box">
+          <h1 className="signup-header">The college marketplace reimagined.</h1>
+          <h3 className="signup-description">
+            Unify lets you buy and sell items right on your campus.
+          </h3>
           <div className="signup-form">
-            <label>First Name:
-              <input type="text"
-                value={this.state.first_name}
-                onChange={this.update('first_name')}
-                className="signup-input"
-              />
-            </label>
-            <br/>
-            <label>Last Name:
-              <input type="text"
-                value={this.state.last_name}
-                onChange={this.update('last_name')}
-                className="signup-input"
-              />
+            <div className="name-inputs">
+                <input type="text"
+                  value={this.state.first_name}
+                  onChange={this.update('first_name')}
+                  className="signup-first-name-input"
+                  placeholder="First name"
+                />
               <br/>
-            </label>
-            <label>Email Address:
-              <input type="text"
-                value={this.state.email_address}
-                onChange={this.update('email_address')}
-                className="signup-input"
-              />
-            </label>
+                <input type="text"
+                  value={this.state.last_name}
+                  onChange={this.update('last_name')}
+                  className="signup-last-name-input"
+                  placeholder="Last name"
+                />
+                <br/>
+            </div>
+  
+            <input type="text"
+              value={this.state.email_address}
+              onChange={this.update('email_address')}
+              className="signup-email-input"
+              placeholder="Email address"
+            />
             <br/>
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="signup-input"
-              />
-            </label>
+            <input type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="signup-password-input"
+              placeholder="Password"
+            />
             <br/>
             Already have an account? {this.props.navLink}
             <br/>
             {this.renderErrors()}
             <br/>
-            <input className="signup-submit" type="submit" value="signup" />
+            <input className="session-submit" type="submit" value="Continue" />
           </div>
         </form>
       </div>

@@ -29,6 +29,13 @@
   margin-top: 10px;
 }
 
+.logo-img:hover {
+  cursor: pointer;
+  opacity: 0.7 !important;
+  filter: alpha(opacity=70) !important; /* For IE8 and earlier */
+  box-shadow: 0 0 0px #000000 !important;
+}
+
 .header-links {
   float: right;
   vertical-align: middle;
