@@ -1,0 +1,62 @@
+.user-favorites-card {
+  position: fixed;
+  top: 110px;
+  right: 30px;
+  bottom: 50px;
+  width: 275px;
+  background-color: white;
+  overflow-y: scroll;
+  box-shadow: -1px 4px 18px #c4c4c4;
+  border-radius: 2px;
+  text-align: center;
+  padding: 0;
+  -ms-overflow-style: none;
+}
+
+.user-favorites-card::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.user-favorites-title {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 17px;
+  float: left;
+  font-weight: 10;
+  margin-left: 25px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.user-favorites-break-line {
+  width: 100%;
+  display: block;
+  border: none;
+  height: 1px;
+  background: #f2f2f2;
+  background: -webkit-gradient(
+    radial,
+    50% 50%,
+    0,
+    50% 50%,
+    350,
+    from(#f2f2f2),
+    to(white)
+  );
+}
+
+.heart-icon {
+  width: 37px;
+  height: 37px;
+  float: left;
+  margin-top: 9px;
+  margin-left: 25px;
+}
+
+.price-tag-icon {
+  width: 37px;
+  height: 37px;
+  float: left;
+  margin-top: 7px;
+  margin-left: 25px;
+  margin-right: 10px;
+}

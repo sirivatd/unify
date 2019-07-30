@@ -1,9 +1,10 @@
 import React from 'react';
+import UserFavoriteItemsContainer from './../user_favorite_items/user_favorite_items_container';
 
 const Home = ({ currentUser, logout }) => {
   return (
     <div>
-      { currentUser ? currentUser.first_name : "No one logged in" }
+      <UserFavoriteItemsContainer />
     </div>
   );
 }
