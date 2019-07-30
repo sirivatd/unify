@@ -24,9 +24,6 @@ const Header = ({ currentUser, logout }) => {
     <div className="fixed-nav-bar">
       <img className="logo-img" src="https://i.ibb.co/tYRyxH5/unify-logo-white.png" />
       {currentUser ? personalGreeting() : sessionLinks()}
-      <section className="hero-content">
-        <img className="hero-image" src="https://i.ibb.co/MkpkstQ/unify-cover.png" />
-      </section>
     </div>
   )
  }
