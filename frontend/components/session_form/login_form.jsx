@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="error-section">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -51,7 +51,6 @@ class LoginForm extends React.Component {
         <label className="login-header">Welcome back to Unify.</label>
           <br/>
           Don't have an account? {this.props.navLink}
-          {this.renderErrors()}
           <div className="login-form">
             <br/>
             <label className="email-text">Email Address:
@@ -69,6 +68,8 @@ class LoginForm extends React.Component {
                 className="login-input"
               />
             </label>
+            <br/>
+            {this.renderErrors()}
             <br/>
             <input className="login-submit" type="submit" value="Login" />
           </div>
