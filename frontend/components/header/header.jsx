@@ -11,7 +11,8 @@ class Header extends React.Component {
   render() {
     const sessionLinks = () => (
       <nav className="header-links">
-        <Link className="link" to="/about">About</Link>
+        <Link className="link" to="/schools">Schools</Link>
+        <Link className="link" to="/students">Students</Link>
         <Link className="link" to="/contact">Contact</Link>
         <Link className="link" to="/login">Login</Link>
         <Link className="link" to="/signup">Sign up</Link>
