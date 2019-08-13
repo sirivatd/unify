@@ -81,7 +81,7 @@ class Header extends React.Component {
       <div>
         {accountSettings()}
         <hgroup className="header-group">
-          <Link className="link" to="/sell">Sell on Unify</Link>
+          <Link className="link" to="/items/new">Sell on Unify</Link>
           <button
             id="account-button"
             className="account-button"

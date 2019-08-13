@@ -21,4 +21,5 @@ class Item < ApplicationRecord
   validates :condition, presence: true
   validates :price, presence: true
 
+  has_many :item_images
 end
