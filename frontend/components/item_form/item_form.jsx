@@ -55,53 +55,50 @@ class ItemForm extends React.Component {
               <ItemImageForm />
             </div>
             <div className="text-input-section">
-              <label className="category-text">Category:
-                <input type="text"
-                  value={this.state.name}
-                  onChange={this.update('name')}
-                  className="item-form-input"
-                />
-              </label>
+              <div className="header-info-text-section">
+                <p className="header-info-text">What's upppppppp killa milla chilla dilla momma billa</p>
+              </div>
+              <input type="text"
+                value={this.state.name}
+                onChange={this.update('name')}
+                className="item-form-input"
+                placeholder="Category"
+              />
+              <br className="category-text-break-line" />
+              <input type="text"
+                value={this.state.name}
+                onChange={this.update('name')}
+                className="item-form-input"
+                placeholder="Item name"
+              />
               <br/>
-              <label className="name-text">Name:
-                <input type="text"
-                  value={this.state.name}
-                  onChange={this.update('name')}
-                  className="item-form-input"
-                />
-              </label>
+              <input type="text"
+                value={this.state.subtitle}
+                onChange={this.update('subtitle')}
+                className="item-form-input"
+                placeholder="Subtitle (put something to catch people's attention here"
+              />
               <br/>
-              <label className="subtitle-text">Subtitle:
-                <input type="text"
-                  value={this.state.subtitle}
-                  onChange={this.update('subtitle')}
-                  className="item-form-input"
-                />
-              </label>
+              <input type="number"
+                value={this.state.price}
+                onChange={this.update('price')}
+                className="item-form-input"
+                placeholder="Price"
+              />
               <br/>
-              <label className="price-text">Price:
-                <input type="number"
-                  value={this.state.price}
-                  onChange={this.update('price')}
-                  className="item-form-input"
-                />
-              </label>
+              <input type="text"
+                value={this.state.description}
+                onChange={this.update('description')}
+                className="item-form-input"
+                placeholder="Description"
+              />
               <br/>
-              <label className="description-text">Description:
-                <input type="text"
-                  value={this.state.description}
-                  onChange={this.update('description')}
-                  className="item-form-input"
-                />
-              </label>
-              <br/>
-              <label className="condition-text">Condition:
-                <input type="text"
-                  value={this.state.condition}
-                  onChange={this.update('condition')}
-                  className="item-form-input"
-                />
-              </label>
+              <input type="text"
+                value={this.state.condition}
+                onChange={this.update('condition')}
+                className="item-form-input"
+                placeholder="Condition"
+              />
               <br/>
               {this.renderErrors()}
               <br/>
