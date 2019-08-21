@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import ItemImageForm from './../item_image_form/item_image_form';
 
 import './styles.scss';
 
@@ -100,6 +101,7 @@ class ItemForm extends React.Component {
             <br/>
             {this.renderErrors()}
             <br/>
+            <ItemImageForm />
             <input className="item-form-submit" type="submit" value="List Item" />
           </div>
         </form>
