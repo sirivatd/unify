@@ -1,6 +1,6 @@
 .item-form-container {
   // background-color: #008119;
-  margin-top: 150px;
+  margin-top: 120px;
   height: 500px;
 }
 
@@ -22,13 +22,14 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
   margin-right: 10px;
+  position: relative;
 }
 
 .item-form {
   display: flex;
   justify-content: center;
   margin-top: 50px;
-  height: 550px;
+  height: 570px;
   margin-bottom: 90px;
 }
 
@@ -41,7 +42,7 @@
   background-color: rgb(240, 240, 240);
   height: 50px;
   display: flex;
-  font-size: 13px;
+  font-size: 10px;
   align-items: center;
   margin-bottom: 20px;
 }

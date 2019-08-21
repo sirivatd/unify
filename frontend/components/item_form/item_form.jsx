@@ -56,7 +56,7 @@ class ItemForm extends React.Component {
             </div>
             <div className="text-input-section">
               <div className="header-info-text-section">
-                <p className="header-info-text">What's upppppppp killa milla chilla dilla momma billa</p>
+                <p className="header-info-text">By posting, you confirm that this listing complies with Unify's Commerce Policies and all applicable laws.</p>
               </div>
               <input type="text"
                 value={this.state.name}
@@ -84,6 +84,9 @@ class ItemForm extends React.Component {
                 onChange={this.update('price')}
                 className="item-form-input"
                 placeholder="Price"
+                min="0.00"
+                max="10000.00"
+                step="0.01"
               />
               <br/>
               <input type="text"

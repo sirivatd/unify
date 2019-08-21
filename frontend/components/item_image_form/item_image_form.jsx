@@ -17,7 +17,9 @@ export default class ItemImageForm extends React.Component {
   handleChange = e => {
     if(e.target.files[0]) {
       const image = e.target.files[0]
-      this.setState(() => ({image}));
+      this.setState(() => ({image}), () => {
+        this.handleUpload();
+      });
     }
   }
 
@@ -40,9 +42,15 @@ export default class ItemImageForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <input type="file" onChange={this.handleChange} />
-        <button onClick={this.handleUpload}>Upload</button>
+      <div className="image-upload-container">
+        <input className="image-upload-input" type="file" id="file" onChange={this.handleChange} />
+        <label for="file" className="image-upload-label">
+          <img className="upload-image-icon" src="https://i.ibb.co/8PSR6PP/unify-plus-icon.png"/>
+        </label>
+        <div className="empty-images-section">
+          <img className="empty-images-icon" src="https://icon-library.net/images/image-icon/image-icon-1.jpg"></img>
+          <p>Images will appear here once you start adding them.</p>
+        </div>
       </div>
     )
   }
