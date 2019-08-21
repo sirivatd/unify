@@ -8,7 +8,8 @@ export default class ItemImageForm extends React.Component {
     super(props);
     this.state = {
       image: null,
-      url: ''
+      url: '',
+      imageURLs: []
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
@@ -35,7 +36,12 @@ export default class ItemImageForm extends React.Component {
       }, 
       () => {
         storage.ref('images').child(image.name).getDownloadURL().then(url => {
-          console.log(url);
+          let imageURLs = this.state.imageURLs;
+          imageURLs.push(url);
+
+          this.setState({
+            imageURLs: imageURLs
+          });
         })
       });
   }
@@ -48,7 +54,7 @@ export default class ItemImageForm extends React.Component {
           <img className="upload-image-icon" src="https://i.ibb.co/8PSR6PP/unify-plus-icon.png"/>
         </label>
         <div className="empty-images-section">
-          <img className="empty-images-icon" src="https://icon-library.net/images/image-icon/image-icon-1.jpg"></img>
+          <img className="empty-images-icon" src="https://firebasestorage.googleapis.com/v0/b/unify-aaba7.appspot.com/o/images%2F37578985_1775156602522224_8899954728813723648_n.jpg?alt=media&token=fab93530-e191-4f97-a2a9-0e0c7947af0a"></img>
           <p>Images will appear here once you start adding them.</p>
         </div>
       </div>

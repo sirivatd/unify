@@ -51,10 +51,10 @@ class ItemForm extends React.Component {
           <label className="item-form-header">List an item on Unify.</label>
           <br/>
           <div className="item-form">
-            <div className="image-input-section">
+            <div className="image-input-section animated fadeInUp delay-1s">
               <ItemImageForm />
             </div>
-            <div className="text-input-section">
+            <div className="text-input-section animated fadeInDown">
               <div className="header-info-text-section">
                 <p className="header-info-text">By posting, you confirm that this listing complies with Unify's Commerce Policies and all applicable laws.</p>
               </div>
