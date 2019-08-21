@@ -51,58 +51,62 @@ class ItemForm extends React.Component {
           <label className="item-form-header">List an item on Unify.</label>
           <br/>
           <div className="item-form">
-            <br/>
-            <label className="name-text">Name:
-              <input type="text"
-                value={this.state.name}
-                onChange={this.update('name')}
-                className="item-form-input"
-              />
-            </label>
-            <br/>
-            <label className="subtitle-text">Subtitle:
-              <input type="text"
-                value={this.state.subtitle}
-                onChange={this.update('subtitle')}
-                className="item-form-input"
-              />
-            </label>
-            <br/>
-            <label className="price-text">Price:
-              <input type="number"
-                value={this.state.price}
-                onChange={this.update('price')}
-                className="item-form-input"
-              />
-            </label>
-            <br/>
-            <label className="description-text">Description:
-              <input type="text"
-                value={this.state.description}
-                onChange={this.update('description')}
-                className="item-form-input"
-              />
-            </label>
-            <br/>
-            <label className="condition-text">Condition:
-              <input type="text"
-                value={this.state.condition}
-                onChange={this.update('condition')}
-                className="item-form-input"
-              />
-            </label>
-            <label className="expiration-date-text">Expiration Date:
-              <input type="date"
-                value={this.state.expirationDate}
-                onChange={this.update('expiration_date')}
-                className="item-form-input"
-              />
-            </label>
-            <br/>
-            {this.renderErrors()}
-            <br/>
-            <ItemImageForm />
-            <input className="item-form-submit" type="submit" value="List Item" />
+            <div className="image-input-section">
+              <ItemImageForm />
+            </div>
+            <div className="text-input-section">
+              <label className="category-text">Category:
+                <input type="text"
+                  value={this.state.name}
+                  onChange={this.update('name')}
+                  className="item-form-input"
+                />
+              </label>
+              <br/>
+              <label className="name-text">Name:
+                <input type="text"
+                  value={this.state.name}
+                  onChange={this.update('name')}
+                  className="item-form-input"
+                />
+              </label>
+              <br/>
+              <label className="subtitle-text">Subtitle:
+                <input type="text"
+                  value={this.state.subtitle}
+                  onChange={this.update('subtitle')}
+                  className="item-form-input"
+                />
+              </label>
+              <br/>
+              <label className="price-text">Price:
+                <input type="number"
+                  value={this.state.price}
+                  onChange={this.update('price')}
+                  className="item-form-input"
+                />
+              </label>
+              <br/>
+              <label className="description-text">Description:
+                <input type="text"
+                  value={this.state.description}
+                  onChange={this.update('description')}
+                  className="item-form-input"
+                />
+              </label>
+              <br/>
+              <label className="condition-text">Condition:
+                <input type="text"
+                  value={this.state.condition}
+                  onChange={this.update('condition')}
+                  className="item-form-input"
+                />
+              </label>
+              <br/>
+              {this.renderErrors()}
+              <br/>
+              <input className="item-form-submit" type="submit" value="List Item" />
+            </div>
           </div>
         </form>
       </div>

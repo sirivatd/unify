@@ -1,5 +1,28 @@
 .item-form-container {
   background-color: gray;
-  margin-top: 200px;
-  margin-left: 200px;
+  margin-top: 150px;
+  height: 500px;
+}
+
+.item-form-box {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.text-input-section {
+  background-color: green;
+  width: 50%;
+}
+
+.image-input-section {
+  background-color: teal;
+  width: 30%;
+}
+
+.item-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  height: 500px;
+  margin-bottom: 90px;
 }
