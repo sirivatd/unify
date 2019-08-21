@@ -4,7 +4,6 @@ class Api::ItemsController < ApplicationController
     if @item.save
       render "api/items/show_item"
     else
-      binding.pry
       render json: @item.errors.full_messages, status: 422
     end
   end

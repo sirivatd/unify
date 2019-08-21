@@ -34,7 +34,7 @@ export const receiveErrors = errors => ({
 // thunk action creators
 
 export const addItem = item => dispatch => {
-  return APIUtil.createItem(item).then(res => (
+  return APIUtil.createItem(item).then(item => (
     dispatch(receiveCurrentItem(item))
     ), err => (
     dispatch(receiveErrors(err.responseJSON))
