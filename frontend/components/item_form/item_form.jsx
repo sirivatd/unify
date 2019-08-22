@@ -13,7 +13,10 @@ class ItemForm extends React.Component {
       subtitle: "",
       name: "",
       expiration_date: "",
-      condition: ""
+      condition: "",
+      categories: ["Electronics", "Textbooks", "Apparel", "Tickets", "Furniture", "Beauty & Health", "Services", "Other"],
+      category: "",
+      conditions: ["Mint", "Excellent", "Good", "Fair", "Salvage"]
     };
 
     this.update = this.update.bind(this);
@@ -51,19 +54,27 @@ class ItemForm extends React.Component {
           <label className="item-form-header">List an item on Unify.</label>
           <br/>
           <div className="item-form">
-            <div className="image-input-section animated fadeInUp delay-1s">
+            <div className="image-input-section animated fadeInLeft delay-1s">
               <ItemImageForm />
             </div>
-            <div className="text-input-section animated fadeInDown">
+            <div className="text-input-section">
               <div className="header-info-text-section">
                 <p className="header-info-text">By posting, you confirm that this listing complies with Unify's Commerce Policies and all applicable laws.</p>
               </div>
-              <input type="text"
-                value={this.state.name}
-                onChange={this.update('name')}
+              <input list="categories"
+                onFocus={() => this.setState({category: ""})}
+                value={this.state.category}
+                onChange={this.update('category')}
                 className="item-form-input"
                 placeholder="Category"
               />
+              <datalist id="categories">
+                {this.state.categories.map(category => {
+                  return (
+                    <option value={category} />
+                  )
+                })}
+              </datalist>
               <br className="category-text-break-line" />
               <input type="text"
                 value={this.state.name}
@@ -96,12 +107,20 @@ class ItemForm extends React.Component {
                 placeholder="Description"
               />
               <br/>
-              <input type="text"
+              <input list="conditions"
+                onFocus={() => this.setState({condition: ""})}
                 value={this.state.condition}
                 onChange={this.update('condition')}
                 className="item-form-input"
                 placeholder="Condition"
               />
+              <datalist id="conditions">
+                {this.state.conditions.map(condition => {
+                  return (
+                    <option value={condition} />
+                  )
+                })}
+              </datalist>
               <br/>
               {this.renderErrors()}
               <br/>
