@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_23_185401) do
+ActiveRecord::Schema.define(version: 2019_08_23_190604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,9 +42,13 @@ ActiveRecord::Schema.define(version: 2019_08_23_185401) do
     t.integer "user_id"
     t.date "expiration_date"
     t.string "condition"
-    t.integer "school_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id", null: false
+    t.bigint "condition_id", null: false
+    t.bigint "school_id", null: false
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["condition_id"], name: "index_items_on_condition_id"
     t.index ["school_id"], name: "index_items_on_school_id"
   end
 
@@ -77,4 +81,7 @@ ActiveRecord::Schema.define(version: 2019_08_23_185401) do
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "conditions"
+  add_foreign_key "items", "schools"
 end

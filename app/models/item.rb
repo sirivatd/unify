@@ -10,9 +10,11 @@
 #  user_id         :integer
 #  expiration_date :date
 #  condition       :string
-#  school_id       :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  category_id     :bigint           not null
+#  condition_id    :bigint           not null
+#  school_id       :bigint           not null
 #
 
 class Item < ApplicationRecord
