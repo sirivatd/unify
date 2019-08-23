@@ -9,7 +9,7 @@ class ItemForm extends React.Component {
     super(props);
     this.state = {
       description: "",
-      price: 0.00,
+      price: '',
       subtitle: "",
       name: "",
       expiration_date: "",
@@ -90,17 +90,6 @@ class ItemForm extends React.Component {
                 placeholder="Subtitle (put something to catch people's attention here)"
               />
               <br/>
-              <span className="dollar-sign">$</span>
-              <input type="number"
-                value={this.state.price}
-                onChange={this.update('price')}
-                className="item-form-input price-input"
-                placeholder="Price"
-                min="0.00"
-                max="10000.00"
-                step="0.01"
-              />
-              <br/>
               <input type="text"
                 value={this.state.description}
                 onChange={this.update('description')}
@@ -122,6 +111,17 @@ class ItemForm extends React.Component {
                   )
                 })}
               </datalist>
+              <br/>
+              <span className="dollar-sign">$</span>
+              <input type="number"
+                value={this.state.price}
+                onChange={this.update('price')}
+                className="item-form-input price-input"
+                placeholder="0.00"
+                min="0.00"
+                max="10000.00"
+                step="0.01"
+              />
               <br/>
               {this.renderErrors()}
               <br/>
