@@ -12,11 +12,10 @@ class ItemForm extends React.Component {
       price: '',
       subtitle: "",
       name: "",
-      expiration_date: "",
       condition: "",
       categories: ["Electronics", "Textbooks", "Apparel", "Tickets", "Furniture", "Beauty & Health", "Services", "Other"],
       category: "",
-      conditions: ["Mint", "Excellent", "Good", "Fair", "Salvage"]
+      conditions: ["New", "Mint", "Excellent", "Good", "Fair", "Salvage"]
     };
 
     this.update = this.update.bind(this);
