@@ -100,11 +100,20 @@
 
 .listed-item-subtitle {
   float: left;
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 13px;
+  color: rgb(77, 77, 77);
 }
 
 .listed-item-name {
-  font-size: 18px;
-  font-family: 'Lexend Deca', sans-serif;
+  font-size: 16px;
+  font-family: "Source Sans Pro", sans-serif;
+  width: 120px;
+  white-space: nowrap;
+  overflow: scroll;
+  padding-bottom: 5px;
+}
+
+.listed-item-name::-webkit-scrollbar { 
+  display: none; 
 }

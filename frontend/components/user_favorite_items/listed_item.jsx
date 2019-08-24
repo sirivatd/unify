@@ -9,7 +9,7 @@ const ListedItem = ({ item, history }) => {
   const itemName = () => (
     <div className="listed-item-info">
       <h3 className="listed-item-name">{item.name}</h3>
-      <h4 className="listed-item-subtitle">{item.subtitle}</h4>
+      <h4 className="listed-item-subtitle">{item.category.name}</h4>
     </div>
   )
 
