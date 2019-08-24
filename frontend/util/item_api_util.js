@@ -1,6 +1,13 @@
-export const fetchItems = userId => {
+export const fetchItems = () => {
   return $.ajax({
     url: `/api/user/items`,
+    method: "GET"
+  });
+};
+
+export const fetchListedItems = () => {
+  return $.ajax({
+    url: `/api/user/listed_items`,
     method: "GET"
   });
 };

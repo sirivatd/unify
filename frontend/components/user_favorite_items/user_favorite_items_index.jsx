@@ -8,6 +8,10 @@ class UserFavoriteItemsIndex extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchAllListedItems();
+  }
+
   render() {
     return (
       <div>
