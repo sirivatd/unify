@@ -28,6 +28,12 @@ class ItemForm extends React.Component {
     this.handleUpload = this.handleUpload.bind(this);
   }
 
+  componentWillUpdate(props) {
+    if (Object.entries(props.items).length > 0) {
+      this.props.history.push("/");
+    }
+  }
+
 
   handleChange = e => {
     if(e.target.files[0]) {
@@ -109,13 +115,21 @@ class ItemForm extends React.Component {
     </div>
     )
 
+    const renderSuccessModal = () => (
+      <div className="success-modal-section">
+        <h2>You have successfully uploaded your item.</h2>
+        <button className="success-modal-button" onClick={() => this.props.history.push("/")} value="Continue" />
+      </div>
+    )
+
     return (
       <div className="item-form-container">
+        { this.props.item ? renderSuccessModal() : null }
         <form onSubmit={this.handleSubmit} className="item-form-box">
           <label className="item-form-header">List an item on Unify.</label>
           <br/>
           <div className="item-form">
-            <div className="image-input-section animated fadeInLeft delay-1s">
+            <div className="image-input-section">
               {imageUploadSection()}
             </div>
             <div className="text-input-section">

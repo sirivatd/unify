@@ -6,7 +6,8 @@ import { receiveCurrentUser } from "./../../actions/session_actions";
 const mapStateToProps = (state, ownProps) => {
   return {
     errors: state.errors.item,
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    items: state.entities.items
   };
 };
 
