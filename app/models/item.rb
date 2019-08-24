@@ -28,4 +28,8 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :school
   belongs_to :condition
+
+  def image_urls
+    self.item_images.pluck(:image_url)
+  end
 end
