@@ -14,7 +14,7 @@ class ItemForm extends React.Component {
       subtitle: "",
       name: "",
       condition: "",
-      categories: ["Electronics", "Textbooks", "Apparel", "Tickets", "Sports & Outdoors", "Furniture", "Beauty & Health", "Services", "Other"],
+      categories: ["Electronics", "Textbooks", "Apparel", "Tickets", "Sports & Outdoors", "Furniture", "Beauty & Health", "Other"],
       category: "",
       conditions: ["New", "Mint", "Excellent", "Good", "Fair", "Salvage"],
       image: null,
