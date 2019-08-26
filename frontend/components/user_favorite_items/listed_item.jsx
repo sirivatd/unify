@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { isIterable } from "core-js";
 
 const ListedItem = ({ item, history }) => {
   const itemImage = () => (
@@ -14,9 +15,11 @@ const ListedItem = ({ item, history }) => {
   )
 
   const itemPrice = () => (
-    <h3 className="listed-item-price">
-      ${item.price.toFixed(2)}
-    </h3>
+    <div className="listed-item-price-section">
+      <h3 className="listed-item-price">
+        ${item.price.toFixed(2)}
+      </h3>
+    </div>
   );
 
   return (
