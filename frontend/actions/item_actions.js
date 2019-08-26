@@ -55,6 +55,12 @@ export const deleteItem = (userId, itemId) => dispatch => {
   );
 };
 
+export const fetchAllItems = () => dispatch => {
+  return APIUtil.fetchAllItems().then(res => 
+    dispatch(receiveAllItems(res))
+  );
+};
+
 export const fetchAllListedItems = () => dispatch => {
   return APIUtil.fetchListedItems().then(res =>
     dispatch(receiveAllListedItems(res))  

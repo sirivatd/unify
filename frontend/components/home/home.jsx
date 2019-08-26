@@ -16,9 +16,9 @@ class Home extends React.Component {
       <div>
         <div className="main-content-section">
           <SchoolInfoContainer />
-          <br className="user-favorites-break-line" />
+          <br className="home-break-line" />
           <CategorySelectContainer />
-          <br className="user-favorites-break-line" />
+          <br className="home-break-line" />
           <RecentItemsContainer />
         </div>
         <UserFavoriteItemsContainer />

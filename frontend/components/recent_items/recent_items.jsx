@@ -8,11 +8,17 @@ class RecentItems extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchAllItems();
+  }
+
   render() {
     return (
       <div className="recent-items-section">
-      This is the recent items section
-    </div>
+      <h2 className="recent-items-header">
+        Recently uploaded items
+      </h2>
+      </div>
     );
   }
 }

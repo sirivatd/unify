@@ -1,4 +1,8 @@
 class Api::ItemsController < ApplicationController
+  def index
+    @items = Item.where(school_id: current_user.school_id).order({ created_at: :desc }).limit(50)
+  end
+
   def create
     @images = item_params[:images]
     @category = Category.find_by(name: item_params[:category])

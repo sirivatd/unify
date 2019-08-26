@@ -12,3 +12,12 @@
 .main-content-section::-webkit-scrollbar { 
   display: none; 
 }
+
+.home-break-line {
+  width: 100%;
+  display: block;
+  border: none;
+  height: 1px;
+  background: #f2f2f2;
+  margin-bottom: 0;
+}
