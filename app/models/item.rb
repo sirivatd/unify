@@ -23,7 +23,7 @@ class Item < ApplicationRecord
   validates :condition, presence: true
   validates :price, presence: true
 
-  has_many :item_images
+  has_many :item_images, dependent: :destroy
 
   belongs_to :category
   belongs_to :school

@@ -22,6 +22,20 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  belongs_to :school
+
+  def school_url
+    self&.school.logo_image_url
+  end
+
+  def school_location
+    self&.school.location
+  end
+
+  def school_size
+    self&.school.institution_size
+  end
+
   def self.find_by_credentials(email_address, password)
     user = User.find_by(email_address: email_address)
     return nil unless user

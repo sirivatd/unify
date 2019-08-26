@@ -1,0 +1,14 @@
+.main-content-section {
+  position: fixed;
+  top: 75px;
+  background-color: yellow;
+  width: -webkit-calc(100% - 315px);
+  width:    -moz-calc(100% - 315px);
+  width:         calc(100% - 315px);
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.main-content-section::-webkit-scrollbar { 
+  display: none; 
+}
