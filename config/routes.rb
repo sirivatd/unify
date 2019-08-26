@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :items, only: [:create, :index, :show, :update]
       resources :listed_items, only: [:index]
     end
+    get '/categories', to: 'categories#index'
     resource :session, only: [:create, :destroy, :show]
   end
   

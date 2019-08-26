@@ -19,7 +19,6 @@ const itemsReducer = (state = {}, action) => {
     case REMOVE_CURRENT_ITEM:
       let newState = Object.assign({}, state);
       delete newState[Object.values(action.item)[0].id];
-
       return newState;
     default:
       return state;

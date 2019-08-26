@@ -8,6 +8,10 @@ class CategorySelect extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchAllCategories();
+  }
+
   render() {
     return (
       <div className="category-select-section">
