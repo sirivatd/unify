@@ -1,20 +1,14 @@
 import { connect } from 'react-redux';
 
-import { logout } from '../../actions/session_actions';
-import { fetchAllListedItems } from '../../actions/item_actions';
 import Home from './home';
 
-const mapStateToProps = ({ session, entities: { users, listedItems } }) => {
+const mapStateToProps = ({ session, entities: { users } }) => {
   return {
     currentUser: users[session.id],
-    listedItems: Object.values(listedItems)
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-});
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(Home);

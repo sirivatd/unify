@@ -11,10 +11,12 @@ class RecentItems extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllItems();
+    this.props.fetchAllFavorites();
   }
 
   render() {
-    const { items } = this.props;
+    const { items, favorites } = this.props;
+    const favoriteIds = favorites.map((fav) => fav.item_id);
 
     return (
       <div className="recent-items-section">
@@ -23,7 +25,7 @@ class RecentItems extends React.Component {
         </h2>
         <div className="item-content-section">
           {items.map((item) => (
-            <ItemPreviewContainer item={item} />
+            <ItemPreviewContainer item={item} favoriteIds={favoriteIds} key={item.id} />
           ))}
         </div>
       </div>

@@ -9,7 +9,15 @@ class ItemPreview extends React.Component {
   }
 
   render() {
-    const { item } = this.props;
+    const { item, favoriteIds } = this.props;
+
+    const greenHeart = () => (
+      <img onClick={() => this.props.deleteFavorite(item.id)} className="favorite-heart-icon" src="https://firebasestorage.googleapis.com/v0/b/unify-aaba7.appspot.com/o/images%2Fgreen-heart.png?alt=media&token=e6d8ac33-d442-4a56-b270-e2adc6cf6f51" />
+    );
+
+    const greyHeart = () => (
+      <img onClick={() => this.props.addFavorite(item.id)} className="favorite-heart-icon" src="https://firebasestorage.googleapis.com/v0/b/unify-aaba7.appspot.com/o/images%2Fgrey-heart.png?alt=media&token=85b1c4d3-a474-41a7-a73b-181daba6bfa3" />
+    );
 
     return (
       <div className="item-preview-section" key={item.id}>
@@ -22,7 +30,7 @@ class ItemPreview extends React.Component {
         </div>
         <br className="home-break-line" />
         <div className="favorites-section">
-          <img className="favorite-heart-icon" src="https://firebasestorage.googleapis.com/v0/b/unify-aaba7.appspot.com/o/images%2Fgrey-heart.png?alt=media&token=85b1c4d3-a474-41a7-a73b-181daba6bfa3" />
+          { favoriteIds.includes(item.id) ? greenHeart() : greyHeart() }
         </div>
       </div>
     );

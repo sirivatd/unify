@@ -29,7 +29,6 @@ class ItemForm extends React.Component {
   }
 
   componentWillUpdate(props, nextProps) {
-    debugger;
     if (Object.entries(props.items).length > 0) {
       this.props.history.push("/");
     }

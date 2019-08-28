@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get '/categories', to: 'categories#index'
     get '/items', to: 'items#index'
     resource :session, only: [:create, :destroy, :show]
+    resource :favorites, only: [:create, :destroy]
+    get '/favorites', to: 'favorites#index'
   end
   
   root "static_pages#root"
