@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import ItemPreviewContainer from './../item_preview/item_preview_container';
+import ReactDOM from 'react-dom';
 
 import './styles.scss';
 
@@ -12,6 +13,7 @@ class CategoryView extends React.Component {
   componentDidMount() {
     this.props.fetchAllFavorites();
     this.props.fetchAllCategoryItems(this.props.selectedCategory);
+    ReactDOM.findDOMNode(this).scrollIntoView();
   }
 
   render() {
