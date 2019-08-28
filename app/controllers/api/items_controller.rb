@@ -26,6 +26,12 @@ class Api::ItemsController < ApplicationController
     @listed_items = Item.where(user_id: current_user.id)
   end
 
+  def favorite_items
+    @favorite_items = Favorite.where(user_id: current_user.id).map { |f| f.item }
+
+    render "api/items/favorite_items"
+  end
+
   def item_params
     params.require(:item).permit(:category, :description, :price, :subtitle, :name, :condition, :user_id, {images: []}, {categories: []}, {conditions: []}, :image, :url)
   end

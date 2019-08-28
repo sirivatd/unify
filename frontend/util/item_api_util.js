@@ -12,6 +12,13 @@ export const fetchListedItems = () => {
   });
 };
 
+export const fetchFavoriteItems = () => {
+  return $.ajax({
+    url: `/api/favorite_items`,
+    method: "GET"
+  });
+};
+
 export const createItem = item => {
   return $.ajax({
     url: `/api/user/items`,

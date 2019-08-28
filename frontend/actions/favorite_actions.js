@@ -3,6 +3,7 @@ import * as APIUtil from "../util/favorite_api_util";
 export const RECEIVE_CURRENT_FAVORITE = "RECEIVE_CURRENT_FAVORITE";
 export const RECEIVE_ALL_FAVORITES = "RECEIVE_ALL_FAVORITES";
 export const REMOVE_CURRENT_FAVORITE = "REMOVE_CURRENT_FAVORITE";
+export const RECEIVE_ALL_FAVORITE_ITEMS = "RECEIVE_ALL_FAVORITE_ITEMS";
 
 export const receiveAllFavorites = favorites => {
   return {

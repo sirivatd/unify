@@ -1,8 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { isIterable } from "core-js";
 
-const ListedItem = ({ item, history }) => {
+const ListedItem = ({ item }) => {
   const itemImage = () => (
     <img className="listed-item-img" src={item.image_urls[0]} />
   )

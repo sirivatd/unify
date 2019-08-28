@@ -4,11 +4,19 @@ export const RECEIVE_CURRENT_ITEM = "RECEIVE_CURRENT_ITEM";
 export const RECEIVE_ALL_ITEMS = "RECEIVE_ALL_ITEMS";
 export const REMOVE_CURRENT_ITEM = "REMOVE_CURRENT_ITEM";
 export const RECEIVE_ALL_LISTED_ITEMS = "RECEIVE_ALL_LISTED_ITEMS";
+export const RECEIVE_ALL_FAVORITE_ITEMS = "RECEIVE_ALL_FAVORITE_ITEMS";
 export const RECEIVE_ITEM_ERRORS = 'RECEIVE_ITEM_ERRORS';
 
 export const receiveAllListedItems = items => {
   return {
     type: RECEIVE_ALL_LISTED_ITEMS,
+    items: items
+  };
+};
+
+export const receiveAllFavoriteItems = items => {
+  return {
+    type: RECEIVE_ALL_FAVORITE_ITEMS,
     items: items
   };
 };
@@ -64,5 +72,11 @@ export const fetchAllItems = () => dispatch => {
 export const fetchAllListedItems = () => dispatch => {
   return APIUtil.fetchListedItems().then(res =>
     dispatch(receiveAllListedItems(res))  
+  );
+};
+
+export const fetchAllFavoriteItems = () => dispatch => {
+  return APIUtil.fetchFavoriteItems().then(res =>
+    dispatch(receiveAllFavoriteItems(res))
   );
 };

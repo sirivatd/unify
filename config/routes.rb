@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resource :favorites, only: [:create, :destroy]
     get '/favorites', to: 'favorites#index'
+    get '/favorite_items', to: 'items#favorite_items'
   end
   
   root "static_pages#root"
