@@ -10,12 +10,12 @@ class CategoryView extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllItems();
     this.props.fetchAllFavorites();
+    this.props.fetchAllCategoryItems(this.props.selectedCategory);
   }
 
   render() {
-    const { items, favorites, selectedCategory } = this.props;
+    const { categoryItems, favorites, selectedCategory } = this.props;
     const favoriteIds = favorites.map((fav) => fav.item_id);
 
     return (
@@ -24,8 +24,8 @@ class CategoryView extends React.Component {
         <h2 className="category-view-header">
           { selectedCategory }
         </h2>
-        <div className="category-view-content-section">
-          {items.map((item) => (
+        <div className="category-view-content-section animated fadeInUp">
+          {categoryItems.map((item) => (
             <ItemPreviewContainer item={item} favoriteIds={favoriteIds} key={item.id} />
           ))}
         </div>

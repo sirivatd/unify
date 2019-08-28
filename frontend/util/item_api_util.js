@@ -19,6 +19,14 @@ export const fetchFavoriteItems = () => {
   });
 };
 
+export const fetchCategoryItems = category => {
+  return $.ajax({
+    url: `/api/category_items`,
+    method: "GET",
+    data: { category: category }
+  });
+};
+
 export const createItem = item => {
   return $.ajax({
     url: `/api/user/items`,

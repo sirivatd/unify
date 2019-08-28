@@ -7,6 +7,7 @@ import favoriteItems from './favorite_items_reducer';
 import categories from './categories_reducer';
 import selectedCategory from './selected_category_reducer';
 import favorites from './favorites_reducer';
+import categoryItems from './category_items_reducer';
 
 export default combineReducers({
   users,
@@ -15,6 +16,7 @@ export default combineReducers({
   favoriteItems,
   categories,
   selectedCategory,
-  favorites
+  favorites,
+  categoryItems
 });
 

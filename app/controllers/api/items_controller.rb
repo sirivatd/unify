@@ -32,6 +32,13 @@ class Api::ItemsController < ApplicationController
     render "api/items/favorite_items"
   end
 
+  def category_items
+    category_id = Category.find_by(name: params[:category]).id
+    @category_items = Item.where(category_id: category_id)
+
+    render "api/items/category_items"
+  end
+
   def item_params
     params.require(:item).permit(:category, :description, :price, :subtitle, :name, :condition, :user_id, {images: []}, {categories: []}, {conditions: []}, :image, :url)
   end
