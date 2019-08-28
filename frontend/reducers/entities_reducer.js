@@ -8,6 +8,7 @@ import categories from './categories_reducer';
 import selectedCategory from './selected_category_reducer';
 import favorites from './favorites_reducer';
 import categoryItems from './category_items_reducer';
+import showSuccessModal from './show_success_modal_reducer';
 
 export default combineReducers({
   users,
@@ -17,6 +18,7 @@ export default combineReducers({
   categories,
   selectedCategory,
   favorites,
-  categoryItems
+  categoryItems,
+  showSuccessModal
 });
 

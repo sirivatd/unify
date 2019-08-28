@@ -6,6 +6,13 @@ import './styles.scss';
 class SuccessModal extends React.Component {
   constructor(props) {
     super(props);
+    
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  closeModal() {
+    this.props.toggleModalOff();
+    this.props.history.push("/");
   }
 
   render() {
@@ -17,7 +24,7 @@ class SuccessModal extends React.Component {
           </div>
           <h2 className="success-modal-header">Great!</h2>
           <h4 className="success-modal-subtitle">Your item has been uploaded successfully.</h4>
-          <button className="success-modal-confirm-button" onClick={() => this.props.history.push("/")}>
+          <button className="success-modal-confirm-button" onClick={() => this.closeModal()}>
             Start Exploring
           </button>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { storage } from './../../../src/firebase';
 import MasonryGrid from './../masonry_grid/masonry_grid';
-import SuccessModal from './../success_modal/success_modal';
+import SuccessModalContainer from './../success_modal/success_modal_container';
 
 import './styles.scss';
 
@@ -28,13 +28,6 @@ class ItemForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
   }
-
-  componentWillUpdate(props, nextProps) {
-    if (Object.entries(props.items).length > 0) {
-      this.props.history.push("/");
-    }
-  }
-
 
   handleChange = e => {
     if(e.target.files[0]) {
@@ -199,7 +192,7 @@ class ItemForm extends React.Component {
                 step="0.01"
               />
               <br/>
-              <SuccessModal />
+              { this.props.showSuccessModal === true ? <SuccessModalContainer /> : null }
               {this.renderErrors()}
               <br/>
               <input className="item-form-submit" type="submit" value="List Item" />

@@ -1,5 +1,7 @@
 import * as APIUtil from "../util/item_api_util";
 
+import { toggleSuccessModalOn } from './success_modal_actions';
+
 export const RECEIVE_CURRENT_ITEM = "RECEIVE_CURRENT_ITEM";
 export const RECEIVE_ALL_ITEMS = "RECEIVE_ALL_ITEMS";
 export const REMOVE_CURRENT_ITEM = "REMOVE_CURRENT_ITEM";
@@ -58,9 +60,10 @@ export const receiveErrors = errors => ({
 // thunk action creators
 
 export const addItem = item => dispatch => {
-  return APIUtil.createItem(item).then(item => (
-    dispatch(receiveCurrentItem(item))
-    ), err => (
+  return APIUtil.createItem(item).then(item => {
+    dispatch(receiveCurrentItem(item));
+    dispatch(toggleSuccessModalOn());
+  }, err => (
     dispatch(receiveErrors(err.responseJSON))
   )); 
 };
