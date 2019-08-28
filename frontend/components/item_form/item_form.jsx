@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { storage } from './../../../src/firebase';
 import MasonryGrid from './../masonry_grid/masonry_grid';
+import SuccessModal from './../success_modal/success_modal';
 
 import './styles.scss';
 
@@ -198,6 +199,7 @@ class ItemForm extends React.Component {
                 step="0.01"
               />
               <br/>
+              <SuccessModal />
               {this.renderErrors()}
               <br/>
               <input className="item-form-submit" type="submit" value="List Item" />
