@@ -18,7 +18,7 @@ class ItemPreview extends React.Component {
         </div>
         <div className="item-preview-info-section">
           <h2 className="item-preview-name">{item.name}</h2>
-          <h4 className="item-preview-price">${item.price}</h4>
+          <h4 className="item-preview-price">${item.price.toFixed(2)}</h4>
         </div>
         <br className="home-break-line" />
         <div className="favorites-section">

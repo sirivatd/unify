@@ -22,6 +22,8 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :favorites
+
   belongs_to :school
 
   def school_url
