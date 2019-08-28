@@ -14,6 +14,12 @@ class UserFavoriteItemsIndex extends React.Component {
     this.props.fetchAllFavoriteItems();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.favorites.length !== nextProps.favorites.length) {
+      this.props.fetchAllFavoriteItems();
+    }
+  }
+
   render() {
     return (
       <div>

@@ -8,7 +8,8 @@ const favoriteItemsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_ALL_FAVORITE_ITEMS:
-      return merge({}, state, action.items);
+      let newState = Object.assign({}, action.items);
+      return newState;
     default:
       return state;
   }
