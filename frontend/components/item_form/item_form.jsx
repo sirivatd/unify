@@ -28,7 +28,8 @@ class ItemForm extends React.Component {
     this.handleUpload = this.handleUpload.bind(this);
   }
 
-  componentWillUpdate(props) {
+  componentWillUpdate(props, nextProps) {
+    debugger;
     if (Object.entries(props.items).length > 0) {
       this.props.history.push("/");
     }
