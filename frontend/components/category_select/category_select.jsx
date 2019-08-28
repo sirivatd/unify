@@ -22,7 +22,7 @@ class CategorySelect extends React.Component {
         </h2>
         <div className="category-select-options">
           {categories.map((category) => (
-            <div className="category-select-option" key={category.id}>
+            <div className="category-select-option" key={category.id} onClick={() => this.props.selectCategory(category.name)}>
               <div className="category-img-section">
                 <img className="category-img" src={category.image_url} />
               </div>

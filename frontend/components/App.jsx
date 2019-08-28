@@ -5,7 +5,7 @@ import LoginFormContainer from './session_form/login_form_container';
 import ItemFormContainer from './item_form/item_form_container';
 
 import HeaderContainer from './header/header_container';
-import HomeContainer from './home/home';
+import HomeContainer from './home/home_container';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Landing from './landing/landing';
 
