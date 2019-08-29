@@ -10,6 +10,11 @@
   height: 285px;
 }
 
+.item-preview-section:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 .item-preview-img-section {
   height: 150px;
   display: flex;

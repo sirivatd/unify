@@ -48,8 +48,7 @@ class Header extends React.Component {
   render() {
     const sessionLinks = () => (
       <nav className="header-links">
-        <Link className="link" to="/schools">Schools</Link>
-        <Link className="link" to="/students">Students</Link>
+        <Link className="link" to="/about">About</Link>
         <Link className="link" to="/contact">Contact</Link>
         <Link className="link" to="/login">Login</Link>
         <Link className="link" to="/signup">Sign up</Link>
@@ -81,8 +80,10 @@ class Header extends React.Component {
       <div>
         {accountSettings()}
         <hgroup className="header-group">
+          <Link  className="link" to="/about">About</Link>
           <Link className="link" to="/messages">Messages</Link>
           <Link className="link" to="/items/new">Sell on Unify</Link>
+          <Link className="link" to="/contact">Contact</Link>
           <button
             id="account-button"
             className="account-button"
