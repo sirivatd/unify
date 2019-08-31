@@ -8,6 +8,7 @@ import HeaderContainer from './header/header_container';
 import HomeContainer from './home/home_container';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Landing from './landing/landing';
+import ImageGalleryView from './image_gallery_view/image_gallery_view';
 
 const App = () => (
   <div>
@@ -64,6 +65,7 @@ const App = () => (
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute exact path="/home" component={HomeContainer} />
         <ProtectedRoute exact path="/items/new" component={ItemFormContainer} />
+        <ProtectedRoute exact path="/image_gallery" component={ImageGalleryView} />
       </Switch>
     </div>
 );

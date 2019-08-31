@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { storage } from './../../../src/firebase';
-import MasonryGrid from './../masonry_grid/masonry_grid';
+import ImageGalleryView from './../image_gallery_view/image_gallery_view';
 import SuccessModalContainer from './../success_modal/success_modal_container';
 
 import './styles.scss';
@@ -68,6 +68,10 @@ class ItemForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if (e.currentTarget.id !== "item-form-submit") {
+      return;
+    }
+    
     const itemObject = { name: this.state.name, subtitle: this.state.subtitle, description: this.state.description, condition: this.state.condition, category: this.state.category, price: this.state.price, images: this.state.images }
     const item = Object.assign({ user_id: this.props.currentUser.id }, itemObject);
     this.props.addItem(item);
@@ -95,7 +99,7 @@ class ItemForm extends React.Component {
 
     const imageGallerySection = () => (
       <div className="image-gallery-section">
-        <MasonryGrid images = {this.state.images} brakePoints={[350, 500, 750]} />
+        <ImageGalleryView show imageUrls={this.state.images} />
       </div>
     )
 
@@ -195,7 +199,7 @@ class ItemForm extends React.Component {
               { this.props.showSuccessModal === true ? <SuccessModalContainer /> : null }
               {this.renderErrors()}
               <br/>
-              <input className="item-form-submit" type="submit" value="List Item" />
+              <button id="item-form-submit" className="item-form-submit" onClick={this.handleSubmit}>Upload item</button>
             </div>
           </div>
         </form>
