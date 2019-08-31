@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import SearchBar from "./../search_bar/search_bar";
 
 import './styles.scss';
 
@@ -11,6 +12,7 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchAllItems();
     document.addEventListener("mousedown", this.handleClick, false);
   }
 
@@ -92,6 +94,7 @@ class Header extends React.Component {
             My Account
           </button>
         </hgroup>
+        <SearchBar items={this.props.items} />
       </div>
     )
   

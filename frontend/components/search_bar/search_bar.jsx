@@ -1,6 +1,8 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
+import './styles.scss';
+
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -42,6 +44,15 @@ class SearchBar extends React.Component {
   }
 
   render() {
+    let filteredItems = this.props.items.filter(item => {
+      if (
+        item.name.toLowerCase().indexOf(this.state.search) !== -1 ||
+        item.subtitle.toLowerCase().indexOf(this.state.search) !== -1
+      ) {
+        return item;
+      }
+    });
+
     return (
       <div className="search-bar-container">
         <form className="search-bar">
@@ -56,16 +67,17 @@ class SearchBar extends React.Component {
           <ul className="search-results hidden-menu">
             <h4 className="search-result-label">Items</h4>
   
-            {["I'm an item", "Item 2", "Item 4", "Item 4", "fsdfsdfsdf"].map(item => {
+            {filteredItems.slice(0, 8).map(item => {
               return (
                 <li
                   onClick={() =>
-                    this.props.history.push(`/`)
+                    this.props.history.push(`/items/${item.id}`)
                   }
                   className="search-result-item"
-                  key={item}
+                  key={item.id}
                 >
-                  <h4 className="search-athlete-name">{item}</h4>
+                  <h4 className="search-item-category">{item.category_name}</h4>
+                  <h4 className="search-item-name">{item.name}</h4>
                 </li>
               );
             })}
