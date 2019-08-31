@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { storage } from './../../../src/firebase';
 import ImageGalleryView from './../image_gallery_view/image_gallery_view';
+import ImageSlider from './../image_slider/image_slider';
 import SuccessModalContainer from './../success_modal/success_modal_container';
 
 import './styles.scss';
@@ -71,7 +72,7 @@ class ItemForm extends React.Component {
     if (e.currentTarget.id !== "item-form-submit") {
       return;
     }
-    
+
     const itemObject = { name: this.state.name, subtitle: this.state.subtitle, description: this.state.description, condition: this.state.condition, category: this.state.category, price: this.state.price, images: this.state.images }
     const item = Object.assign({ user_id: this.props.currentUser.id }, itemObject);
     this.props.addItem(item);
@@ -99,7 +100,8 @@ class ItemForm extends React.Component {
 
     const imageGallerySection = () => (
       <div className="image-gallery-section">
-        <ImageGalleryView show imageUrls={this.state.images} />
+        <ImageSlider images={this.state.images} />
+        <ImageGalleryView imageUrls={this.state.images} />
       </div>
     )
 
@@ -109,6 +111,7 @@ class ItemForm extends React.Component {
       <label for="file" className="image-upload-label">
         <img className="upload-image-icon" src="https://firebasestorage.googleapis.com/v0/b/unify-aaba7.appspot.com/o/images%2Fadd_image_icon.png?alt=media&token=a9771772-7005-424d-85a0-bf43aea20d26"/>
       </label>
+      <h3 className="num-img-uploaded-text">{this.state.images.length} image(s) uploaded</h3>
       {this.state.images.length > 0 ? imageGallerySection() : emptyImageSection()}
     </div>
     )

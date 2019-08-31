@@ -8,7 +8,7 @@ import HeaderContainer from './header/header_container';
 import HomeContainer from './home/home_container';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Landing from './landing/landing';
-import ImageGalleryView from './image_gallery_view/image_gallery_view';
+import ItemShowContainer from "./item_show/item_show_container";
 
 const App = () => (
   <div>
@@ -50,7 +50,7 @@ const App = () => (
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           rel="stylesheet"
-        />
+        />  
         <link
           rel="stylesheet"
           href="https://unpkg.com/react-vis/dist/style.css"
@@ -65,7 +65,7 @@ const App = () => (
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute exact path="/home" component={HomeContainer} />
         <ProtectedRoute exact path="/items/new" component={ItemFormContainer} />
-        <ProtectedRoute exact path="/image_gallery" component={ImageGalleryView} />
+        <ProtectedRoute path="/items/:itemId" component={ItemShowContainer} />
       </Switch>
     </div>
 );

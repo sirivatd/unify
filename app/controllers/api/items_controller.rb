@@ -3,6 +3,11 @@ class Api::ItemsController < ApplicationController
     @items = Item.where(school_id: current_user.school_id).order({ created_at: :desc }).limit(50)
   end
 
+  def show
+    @item = Item.find(params[:id])
+    render "api/items/show_item"
+  end
+
   def create
     @images = item_params[:images]
     @category = Category.find_by(name: item_params[:category])

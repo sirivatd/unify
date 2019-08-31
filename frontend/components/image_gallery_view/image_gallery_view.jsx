@@ -25,7 +25,7 @@ class ImageGalleryView extends React.Component {
 
     return (
       <div>
-        <button onClick={this.toggleGallery}>See more photos</button>
+        <button className="image-gallery-button" onClick={this.toggleGallery}>View as gallery</button>
          <ReactBnbGallery
           show={this.state.galleryOpened}
           photos={photos}
