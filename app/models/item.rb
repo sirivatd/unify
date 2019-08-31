@@ -28,6 +28,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :school
   belongs_to :condition
+  belongs_to :user
 
   def category_name
     self.category.name
@@ -35,6 +36,10 @@ class Item < ApplicationRecord
 
   def condition_name
     self.condition.name
+  end
+
+  def seller_name
+    self.user.first_name + " " + self.user.last_name
   end
 
   def image_urls

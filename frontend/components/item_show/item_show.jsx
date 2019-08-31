@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import ImageSlider from './../image_slider/image_slider';
+import ImageGalleryView from './../image_gallery_view/image_gallery_view';
 
 import './styles.scss';
 
@@ -37,23 +39,64 @@ class ItemShow extends React.Component {
     );
 
     const itemInfo = () => (
-      <div className="item-preview-section" key={item && item.id}>
-      <div className="item-preview-img-section">
-        <img className="item-preview-img" src={item && item.image_urls[0]} />
+      <div className="item-show-content">
+        <div className="item-show-image-section">
+          <div className="item-show-image-content">
+            <ImageGalleryView imageUrls={item.image_urls} />
+            <ImageSlider images={item.image_urls} />
+          </div>
+        </div>
+        <div className="item-show-info-section">
+          <div className="item-show-header-section">
+            <h4 className="item-show-header-category">{item.category_name}</h4>
+            <p className="item-show-header-created-at">Uploaded at {item.created_at}</p>
+          </div>
+          <h1 className="item-show-name">{item.name}</h1>
+          <h3 className="item-show-subtitle">{item.subtitle}</h3>
+          <h3 className="item-show-price">${item.price.toFixed(2)}</h3>
+          <div className="item-show-user-action-section">
+            <button className="message-seller-button">Message seller</button>
+            <div className="favorite-heart-icon-section">
+              { favoriteIds && favoriteIds.includes(item && item.id) ? greenHeart() : greyHeart() }
+            </div>
+          </div>
+
+          <br className="item-show-break-line" />
+
+          <div className="item-show-detail-row">
+            <h4 className="item-show-detail-row-title">Category</h4>
+            <h4 className="item-show-detail-row-value">{item.category_name}</h4>
+          </div>
+
+          <div className="item-show-detail-row">
+            <h4 className="item-show-detail-row-title">Condition</h4>
+            <h4 className="item-show-detail-row-value">{item.condition_name}</h4>
+          </div>
+
+
+          <div className="item-show-detail-row">
+            <h4 className="item-show-detail-row-title">Uploaded by</h4>
+            <h4 className="item-show-detail-row-value">{item.seller_name}</h4>
+          </div>
+
+          <div className="item-show-detail-row">
+            <h4 className="item-show-detail-row-title">Posted on</h4>
+            <h4 className="item-show-detail-row-value">{item.created_at}</h4>
+          </div>
+
+          <br className="item-show-break-line" />
+
+          <div className="item-show-description-section">
+            <h4 className="item-show-description-title">Description</h4>
+            {item.description}
+          </div>
+
+        </div>
       </div>
-      <div className="item-preview-info-section">
-        <h2 className="item-preview-name">{item && item.name}</h2>
-        <h4 className="item-preview-price">${item && item.price.toFixed(2)}</h4>
-      </div>
-      <br className="home-break-line" />
-      <div className="favorites-section">
-        { favoriteIds && favoriteIds.includes(item && item.id) ? greenHeart() : greyHeart() }
-      </div>
-    </div>
     );
 
     return (
-      <div>
+      <div className="item-show-container">
         { Object.values(items).length > 0 ? itemInfo() : loader()}
       </div>
     );
