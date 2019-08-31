@@ -21,10 +21,10 @@ class ItemPreview extends React.Component {
 
     return (
       <div className="item-preview-section" key={item.id}>
-        <div className="item-preview-img-section">
+        <div className="item-preview-img-section" onClick={() => this.props.history.push(`/items/${item.id}`)}>
           <img className="item-preview-img" src={item.image_urls[0]} />
         </div>
-        <div className="item-preview-info-section">
+        <div className="item-preview-info-section" onClick={() => this.props.history.push(`/items/${item.id}`)}>
           <h2 className="item-preview-name">{item.name}</h2>
           <h4 className="item-preview-price">${item.price.toFixed(2)}</h4>
         </div>
@@ -37,4 +37,4 @@ class ItemPreview extends React.Component {
   }
 }
 
-export default ItemPreview;
+export default withRouter(ItemPreview);

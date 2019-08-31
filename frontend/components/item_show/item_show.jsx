@@ -42,7 +42,9 @@ class ItemShow extends React.Component {
       <div className="item-show-content">
         <div className="item-show-image-section">
           <div className="item-show-image-content">
-            <ImageGalleryView imageUrls={item.image_urls} />
+            <div className="item-show-image-gallery-section">
+              <ImageGalleryView imageUrls={item.image_urls} />
+            </div>
             <ImageSlider images={item.image_urls} />
           </div>
         </div>

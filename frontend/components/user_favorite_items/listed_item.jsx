@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
-const ListedItem = ({ item }) => {
+const ListedItem = ({ item, history }) => {
   const itemImage = () => (
     <img className="listed-item-img" src={item.image_urls[0]} />
   )
@@ -24,6 +24,7 @@ const ListedItem = ({ item }) => {
   return (
     <li
       className="listed-items-section"
+      onClick={() => history.push(`/items/${item.id}`)}
     >
       {itemImage()}
       {itemName()}
