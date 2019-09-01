@@ -1,0 +1,16 @@
+.messages-content-section {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.conversation-view-section {
+  background-color: red;
+  height: 100vh;
+  width: 25%;
+}
+
+.message-view-section {
+  background-color: blue;
+  height: 100vh;
+  width: 75%;
+}

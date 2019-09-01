@@ -22,6 +22,7 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :condition, presence: true
   validates :price, presence: true
+  validates :user_id, presence: true
 
   has_many :item_images, dependent: :destroy
 

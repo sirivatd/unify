@@ -16,7 +16,12 @@ class ConversationView extends React.Component {
 
     return (
       <div className="messages-content-section">
-        This is where the messages will go
+        <div className="conversation-view-section">
+          This is where the conversations will go
+        </div>
+        <div className="message-view-section">
+          This is where the messages will go
+        </div>
       </div>
     );
   }

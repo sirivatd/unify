@@ -83,7 +83,7 @@ class Header extends React.Component {
         {accountSettings()}
         <hgroup className="header-group">
           <Link  className="link" to="/about">About</Link>
-          <Link className="link" to="/messages">Messages</Link>
+          <Link className="link" to="/conversations">Messages</Link>
           <Link className="link" to="/items/new">Sell on Unify</Link>
           <Link className="link" to="/contact">Contact</Link>
           <button

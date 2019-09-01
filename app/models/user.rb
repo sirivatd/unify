@@ -22,8 +22,8 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many :favorites
-  has_many :messages
+  has_many :favorites, dependent: :destroy
+  has_many :messages, dependent: :destroy
   has_many :conversations, foreign_key: :sender_id
 
   belongs_to :school
