@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     end
     get '/categories', to: 'categories#index'
     get '/items', to: 'items#index'
+    get '/conversations', to: 'conversations#index'
     resource :session, only: [:create, :destroy, :show]
     resource :favorites, only: [:create, :destroy]
     get '/favorites', to: 'favorites#index'

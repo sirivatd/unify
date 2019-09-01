@@ -6,6 +6,7 @@ import ItemFormContainer from './item_form/item_form_container';
 
 import HeaderContainer from './header/header_container';
 import HomeContainer from './home/home_container';
+import ConversationViewContainer from './conversation_view/conversation_view_container';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Landing from './landing/landing';
 import ItemShowContainer from "./item_show/item_show_container";
@@ -66,6 +67,7 @@ const App = () => (
         <ProtectedRoute exact path="/home" component={HomeContainer} />
         <ProtectedRoute exact path="/items/new" component={ItemFormContainer} />
         <ProtectedRoute path="/items/:itemId" component={ItemShowContainer} />
+        <ProtectedRoute exact path="/conversations" component={ConversationViewContainer} />
       </Switch>
     </div>
 );
