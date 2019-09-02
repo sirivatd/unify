@@ -16,12 +16,14 @@
 .message-view-section {
   height: 100vh;
   width: 55%;
+  overflow-y: scroll;
 }
 
 .conversation-item-view-section {
-  background-color: tan;
+  overflow-y: scroll;
   height: 100vh;
   width: 20%;
+  border-left: 1px solid rgb(235, 235, 235);
 }
 
 .conversation-view-section {
@@ -43,7 +45,7 @@
 }
 
 .gray-selected {
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(240, 240, 240);
 }
 
 .green-selected {

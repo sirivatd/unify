@@ -116,16 +116,16 @@ class ItemForm extends React.Component {
     </div>
     )
 
-    const renderSuccessModal = () => (
-      <div className="success-modal-section">
-        <h2>You have successfully uploaded your item.</h2>
-        <button className="success-modal-button" onClick={() => this.props.history.push("/")} value="Continue" />
-      </div>
-    )
+    // const renderSuccessModal = () => (
+    //   <div className="success-modal-section">
+    //     <h2>You have successfully uploaded your item.</h2>
+    //     <button className="success-modal-button" onClick={() => this.props.history.push("/")} value="Continue" />
+    //   </div>
+    // )
 
     return (
       <div className="item-form-container">
-        { this.props.item ? renderSuccessModal() : null }
+        {/* { this.props.item ? renderSuccessModal() : null } */}
         <form onSubmit={this.handleSubmit} className="item-form-box">
           <label className="item-form-header">List an item on Unify.</label>
           <br/>

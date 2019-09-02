@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addFavorite, deleteFavorite, fetchAllFavorites } from '../../actions/favorite_actions';
 import { fetchAllFavoriteItems } from '../../actions/item_actions';
 import { fetchAllItems } from './../../actions/item_actions';
+import { createConversation } from './../../actions/conversation_actions';
 import ItemShow from './item_show';
 
 const mapStateToProps = ({ session, entities: { items, users, favoriteItems, favorites }}, ownProps) => {
@@ -21,7 +22,8 @@ const mapDispatchToProps = dispatch => ({
   deleteFavorite: itemId => dispatch(deleteFavorite(itemId)),
   fetchAllFavoriteItems: () => dispatch(fetchAllFavoriteItems()),
   fetchAllItems: () => dispatch(fetchAllItems()),
-  fetchAllFavorites: () => dispatch(fetchAllFavorites())
+  fetchAllFavorites: () => dispatch(fetchAllFavorites()),
+  createConversation: conversation => dispatch(createConversation(conversation))
 });
 
 export default connect(

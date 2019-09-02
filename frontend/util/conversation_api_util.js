@@ -7,7 +7,7 @@ export const fetchConversations = () => {
 
 export const createConversation = conversation => {
   return $.ajax({
-    url: `/api/conversation`,
+    url: `/api/conversations`,
     method: "POST",
     data: { conversation: conversation }
   });

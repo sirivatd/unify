@@ -27,8 +27,16 @@ class MessageView extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if (this.state.messageText === "") {
+      return;
+    }
+
     const message = {user_id: this.props.currentUser.id, body: this.state.messageText, conversation_id: this.props.selectedConversation.id }
     this.props.addMessage(message);
+
+    this.setState({
+      messageText: ""
+    });
   }
  
   render() {
@@ -37,7 +45,6 @@ class MessageView extends React.Component {
     const chatBubbleView = () => (
       <ul className="chat-message-section">
           {this.props.messages.map((message) => {
-            debugger;
             return (
               <li className={"chat-message-bubble" + (parseInt(message.user_id) === parseInt(this.props.currentUser.id) ? " gray-selected" : "")}>
                 <div className="chat-bubble-meta-content">

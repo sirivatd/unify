@@ -60,6 +60,11 @@
   margin-top: 25%;
 }
 
+.chat-message-section {
+  overflow-y: scroll;
+  padding-bottom: 75px;
+}
+
 .chat-message-bubble {
   min-height: 75px;
   width: 100%;

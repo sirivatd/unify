@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get '/favorite_items', to: 'items#favorite_items'
     get '/category_items', to: 'items#category_items'
     get '/messages', to: 'messages#index'
+    post '/conversations', to: 'conversations#create'
   end
   
   root "static_pages#root"

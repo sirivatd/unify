@@ -108,6 +108,7 @@
   position: relative;
   margin-bottom: 10px;
   font-size: 14px;
+  overflow-x: auto;
 }
 
 .item-show-detail-row-title {
@@ -138,4 +139,91 @@
 
 .item-show-subtitle {
   padding-right: 20px;
+}
+
+.message-modal-section {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.message-modal-content {
+  position: fixed;
+  width: 500px;
+  height: 350px;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px; /* Negative half of height. */
+  margin-left: -250px; /* Negative half of width. */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.message-modal-header {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 23px;
+  color: rgb(80, 80, 80);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.message-modal-input-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 23px;
+  margin-bottom: 30px;
+}
+
+.checkmark-section {
+  text-align: center;
+}
+
+.message-modal-text-input {
+  display: block;
+  font-family: "Source Sans Pro", sans-serif;
+  color: darkgray;
+  font-size: 14px;
+  width: 400px;
+  padding: 7px;
+  resize: none;
+}
+
+.message-modal-confirm-button {
+  width: 140px;
+  height: 48px;
+  background-color: #00b248;
+  font-family: "Source Sans Pro", sans-serif;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+.message-modal-confirm-button:hover {
+  background-color: #00e575;
+  cursor: pointer;
+}
+
+.message-modal-cancel-button {
+  height: 30px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.message-modal-cancel-button:hover {
+  cursor: pointer;
+  opacity: 0.7 !important;
+  filter: alpha(opacity=70) !important; /* For IE8 and earlier */
+  box-shadow: 0 0 0px #000000 !important;
 }
