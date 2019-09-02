@@ -13,6 +13,12 @@ class MessageView extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.selectedConversation !== nextProps.selectedConversation) {
+      this.props.fetchAllMessages(nextProps.selectedConversation.id);
+    }
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -21,15 +27,35 @@ class MessageView extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
+    const message = {user_id: this.props.currentUser.id, body: this.state.messageText, conversation_id: this.props.selectedConversation.id }
+    this.props.addMessage(message);
   }
  
   render() {
     const { selectedConversation } = this.props;
 
+    const chatBubbleView = () => (
+      <ul className="chat-message-section">
+          {this.props.messages.map((message) => {
+            debugger;
+            return (
+              <li className={"chat-message-bubble" + (parseInt(message.user_id) === parseInt(this.props.currentUser.id) ? " gray-selected" : "")}>
+                <div className="chat-bubble-meta-content">
+                  <p className="chat-bubble-author">{message.user_name}</p>
+                  <p className="chat-bubble-time-sent">{message.time_sent}</p>
+                </div>
+                <div className="chat-message-bubble-body-content">
+                  <h4 className="chat-message-bubble-body">{message.body}</h4>
+                </div>
+              </li>
+            )
+          })}
+      </ul>
+    );
+
     const messageView = () => (
       <div>
-        I'm a conversation between { selectedConversation.sender_name} and { selectedConversation.recipient_name}
+       { this.props.messages && this.props.messages.length > 0 ? chatBubbleView() : null }
         <div className="send-message-section">
           <div className="message-form-box">
             <input type="text"

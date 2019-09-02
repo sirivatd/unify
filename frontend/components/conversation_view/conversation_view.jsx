@@ -21,7 +21,7 @@ class ConversationView extends React.Component {
           <div className="conversation-view-wrapper">
             {conversations.map(conversation => {
               return (
-                <li className={"conversation-section-row" + (selectedConversation && parseInt(selectedConversation.id) === parseInt(conversation.id) ? " gray-selected" : "")} onClick={() => this.props.selectConversation(conversation)}>
+                <li className={"conversation-section-row" + (selectedConversation && parseInt(selectedConversation.id) === parseInt(conversation.id) ? " green-selected" : "")} onClick={() => this.props.selectConversation(conversation)}>
                   <img className="conversation-row-img" src={conversation.item_image_url} />
                   <div className="conversation-row-txt">
                     <h2 className="conversation-row-name">{parseInt(currentUser.id) === conversation.sender_id ? conversation.recipient_name : conversation.sender_name}</h2>

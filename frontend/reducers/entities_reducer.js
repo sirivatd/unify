@@ -11,6 +11,7 @@ import favorites from './favorites_reducer';
 import categoryItems from './category_items_reducer';
 import showSuccessModal from './show_success_modal_reducer';
 import conversations from './conversations_reducer';
+import messages from './messages_reducer';
 
 export default combineReducers({
   users,
@@ -23,6 +24,7 @@ export default combineReducers({
   favorites,
   categoryItems,
   showSuccessModal,
-  conversations
+  conversations,
+  messages
 });
 

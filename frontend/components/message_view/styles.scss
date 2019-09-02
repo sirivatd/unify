@@ -33,6 +33,7 @@
 .upload-message-icon {
   height: 30px;
   padding-right: 20px;
+  padding-top: 2px;
 }
 
 .upload-message-icon:hover {
@@ -59,3 +60,27 @@
   margin-top: 25%;
 }
 
+.chat-message-bubble {
+  min-height: 75px;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.chat-bubble-meta-content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: rgb(170, 170, 170);
+  font-family: "Noto Sans", sans-serif;
+  font-size: 12px;
+}
+
+.chat-message-bubble-body {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "Noto Sans", sans-serif;
+  margin-top: 5px;
+  font-size: 17px;
+}
