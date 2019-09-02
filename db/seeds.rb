@@ -11,7 +11,7 @@ Message.destroy_all
 Favorite.destroy_all
 
 # Create schools
-school = School.create(name: "University of Redlands", description: "The Universirt of Redlands is a private, non-profit university situated on 160 acres near downtown", institution_size: 3169, location: "Redlands, California", phone: "(909) 793-2121")
+school = School.create(name: "University of Redlands", description: "The Universirt of Redlands is a private, non-profit university situated on 160 acres near downtown", institution_size: 3169, location: "Redlands, California", phone: "(909) 793-2121", logo_image_url: "https://firebasestorage.googleapis.com/v0/b/unify-aaba7.appspot.com/o/images%2Funiversity_of_redlands_logo.png?alt=media&token=186257de-48e7-4eca-9454-1ccdcd9955a5")
 
 # Create users
 user1 = User.create(email_address: "admin@unify.com", school_id: school.id, first_name: "Admin", last_name: "Admin", password: "password")

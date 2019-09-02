@@ -15,7 +15,6 @@ class Home extends React.Component {
   }
 
   handleDownArrowClick = () => {
-    debugger;
     const element = document.getElementById("recent-items-container-baseline");
     element.scrollIntoView({behavior: "smooth"});
   }

@@ -15,7 +15,13 @@
 .message-view-section {
   background-color: blue;
   height: 100vh;
-  width: 75%;
+  width: 55%;
+}
+
+.conversation-item-view-section {
+  background-color: tan;
+  height: 100vh;
+  width: 20%;
 }
 
 .conversation-view-section {
@@ -29,6 +35,15 @@
   padding-bottom: 10px;
   display: flex;
   align-items: center;
+}
+
+.conversation-section-row:hover {
+  cursor: pointer;
+  background-color: rgb(235, 235, 235);
+}
+
+.gray-selected {
+  background-color: rgb(235, 235, 235);
 }
 
 .conversation-row-img {

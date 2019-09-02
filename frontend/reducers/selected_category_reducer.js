@@ -1,5 +1,3 @@
-import merge from "lodash/merge";
-
 import {
   RECEIVE_SELECTED_CATEGORY,
   REMOVE_SELECTED_CATEGORY
