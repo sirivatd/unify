@@ -27,8 +27,8 @@ class MessageView extends React.Component {
   render() {
     const { selectedConversation } = this.props;
 
-    return (
-      <div className="message-view-content">
+    const messageView = () => (
+      <div>
         I'm a conversation between { selectedConversation.sender_name} and { selectedConversation.recipient_name}
         <div className="send-message-section">
           <div className="message-form-box">
@@ -41,6 +41,19 @@ class MessageView extends React.Component {
             <img className="upload-message-icon" src="https://firebasestorage.googleapis.com/v0/b/unify-aaba7.appspot.com/o/images%2Fsend-button.png?alt=media&token=1f3d18ce-9869-415e-ad6b-efcf24446a3b" onClick={this.handleSubmit} />
           </div>
         </div>
+      </div>
+    );
+
+    const emptyMessageView = () => (
+      <div className="empty-message-view-section">
+        <img className="empty-message-icon" src="https://firebasestorage.googleapis.com/v0/b/unify-aaba7.appspot.com/o/images%2Fspeech-bubble.png?alt=media&token=a2d48c9f-c64c-4387-bf9e-e4e383020351" />
+        <h3 className="empty-message-text">Select a conversation on the left to start messaging</h3>
+      </div>
+    )
+
+    return (
+      <div className="message-view-content">
+        { Object.values(selectedConversation).length > 0 ? messageView() : emptyMessageView() }
       </div>
     );
   }
