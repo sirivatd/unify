@@ -1,6 +1,6 @@
 .main-content-section {
   position: fixed;
-  top: 75px;
+  top: 60px;
   // background-color: yellow;
   width: -webkit-calc(100% - 270px);
   width:    -moz-calc(100% - 270px);
@@ -8,6 +8,8 @@
   height: 100vh;
   overflow-y: scroll;
   background-color: #fbfbfb;
+  padding-left: 25px;
+  position: relative;
 }
 
 .main-content-section::-webkit-scrollbar { 

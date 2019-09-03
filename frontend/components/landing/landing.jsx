@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import './styles.scss';
 class Landing extends React.Component {
@@ -11,10 +12,10 @@ class Landing extends React.Component {
         <br />
         <h2>campus marketplace.</h2>
       </div>
-      <button className="sign-up-button animated fadeInUp delay-1s">Sign Up</button>
+      <button className="sign-up-button animated fadeInUp delay-1s" onClick={() => this.props.history.push("/signup")}>Sign Up</button>
     </div>
     );
   }
 }
 
-export default Landing;
+export default withRouter(Landing);
