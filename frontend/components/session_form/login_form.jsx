@@ -50,7 +50,7 @@ class LoginForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
         <label className="login-header">Welcome back to Unify.</label>
           <br/>
-          Don't have an account? {this.props.navLink}
+          <p className="dont-have-an-account-link">Don't have an account? {this.props.navLink}</p>
           <div className="login-form">
             <br/>
             <label className="email-text">Email Address:

@@ -76,7 +76,7 @@ class SignupForm extends React.Component {
               placeholder="Password"
             />
             <br/>
-            Already have an account? {this.props.navLink}
+            <p className="dont-have-an-account-link">Already have an account? {this.props.navLink}</p>
             <br/>
             {this.renderErrors()}
             <br/>
