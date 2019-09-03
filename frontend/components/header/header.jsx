@@ -53,7 +53,7 @@ class Header extends React.Component {
         <Link className="link" to="/about">About</Link>
         <Link className="link" to="/contact">Contact</Link>
         <Link className="link" to="/login">Login</Link>
-        <Link className="link" to="/signup">Sign up</Link>
+        <Link className="link signup-link" to="/signup">Sign up</Link>
       </nav>
     )
 
@@ -103,7 +103,7 @@ class Header extends React.Component {
         <div
           onClick={() => this.props.history.push("/")}
         >
-          <img className="logo-img" src="https://i.ibb.co/tYRyxH5/unify-logo-white.png" />
+          <img className="logo-img" src="https://firebasestorage.googleapis.com/v0/b/unify-aaba7.appspot.com/o/images%2Ffavicon.png?alt=media&token=f66966a8-2daf-46f7-98c5-1894f9aa3d6d" />
   
         </div>
         {this.props.currentUser ? accountLinks() : sessionLinks()}

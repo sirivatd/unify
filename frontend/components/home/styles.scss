@@ -2,11 +2,12 @@
   position: fixed;
   top: 75px;
   // background-color: yellow;
-  width: -webkit-calc(100% - 315px);
-  width:    -moz-calc(100% - 315px);
-  width:         calc(100% - 315px);
+  width: -webkit-calc(100% - 270px);
+  width:    -moz-calc(100% - 270px);
+  width:         calc(100% - 270px);
   height: 100vh;
   overflow-y: scroll;
+  background-color: #fbfbfb;
 }
 
 .main-content-section::-webkit-scrollbar { 

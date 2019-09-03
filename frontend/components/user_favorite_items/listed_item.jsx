@@ -9,7 +9,6 @@ const ListedItem = ({ item, history }) => {
   const itemName = () => (
     <div className="listed-item-info">
       <h3 className="listed-item-name">{item.name}</h3>
-      <h4 className="listed-item-subtitle">{item.category.name}</h4>
     </div>
   )
 
@@ -23,7 +22,7 @@ const ListedItem = ({ item, history }) => {
 
   return (
     <li
-      className="listed-items-section"
+      className="listed-items-section animated fadeInDown"
       onClick={() => history.push(`/items/${item.id}`)}
     >
       {itemImage()}

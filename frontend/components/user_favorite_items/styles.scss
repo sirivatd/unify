@@ -1,16 +1,17 @@
 .user-favorites-card {
   position: fixed;
-  top: 110px;
-  right: 30px;
-  bottom: 50px;
+  top: 75px;
+  right: 0px;
+  bottom: 0px;
   width: 275px;
   background-color: white;
   overflow-y: scroll;
-  box-shadow: -1px 4px 18px #c4c4c4;
+  border-left: 1px solid lightgray;
   border-radius: 2px;
   text-align: center;
   padding: 0;
   -ms-overflow-style: none;
+  text-align: left;
 }
 
 .user-favorites-card::-webkit-scrollbar {
@@ -20,11 +21,11 @@
 .user-favorites-title {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 17px;
-  float: left;
   font-weight: 10;
   margin-left: 25px;
   padding-top: 20px;
   margin-bottom: 20px;
+  color: #636363;
 }
 
 .user-favorites-break-line {
@@ -68,14 +69,20 @@
   padding-bottom: 15px;
   height: 60px;
   display: flex;
-  background-color: rgb(248, 248, 248);
   position: relative;
   margin-bottom: 2px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 10px;
+  box-shadow: -1px 4px 18px #c4c4c4;
+  opacity: 0.9;
+  margin-bottom: 22px;
 }
 
 .listed-items-section:hover {
   cursor: pointer;
-  background-color: #00b24759
+  background-color: #00b24759;
+  transform: scale(1.05);
 }
 
 .listed-item-info {
@@ -86,25 +93,25 @@
 
 .listed-item-img {
   float: left;
-  max-width: 60px;
+  width: 60px;
   height: 60px;
-  margin-left: 5px;
-  border-radius: 10px;
+  margin-left: 10px;
+  border-radius: 50px;
 }
 
 .listed-item-price {
   font-size: 12px;
-  margin-top: 34px;
   position: absolute;
-  right: 0px;
-  bottom: 0px;
+  bottom: 23px;
+  left: 80px;
   font-family: "Source Sans Pro", sans-serif;
   color: white;
-  background-color: #21ce99;
+  background-color: #00b248;
+  // background-color: #21ce99;
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  border-radius: 1px;
+  border-radius: 5px;
 }
 
 .listed-item-subtitle {
@@ -117,7 +124,7 @@
 .listed-item-name {
   font-size: 16px;
   font-family: "Source Sans Pro", sans-serif;
-  width: 160px;
+  width: 150px;
   white-space: nowrap;
   overflow: scroll;
   padding-bottom: 7px;

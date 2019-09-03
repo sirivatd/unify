@@ -1,12 +1,12 @@
 .fixed-nav-bar {
-  background-color: #00b248;
+  background-color: white;
   height: 75px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-bottom: 1px solid lightgray;
 }
 
 .logo-img {
@@ -34,9 +34,29 @@
 
 .link {
   margin-left: 40px;
-  font-family: 'Roboto', san-serif;
+  font-family: 'Manjari', sans-serif;
   font-size: 17px;
   text-decoration: none;
+  color: gray;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: #00b248;
+}
+
+.signup-link {
+  background-color: #00b248;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 7px;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: white;
+}
+
+.signup-link:hover {
+  background-color: #00e575;
   color: white;
 }
 
@@ -168,11 +188,15 @@
 .account-button {
   background-color: transparent;
   border: none;
-  color: white;
+  color: gray;
   cursor: pointer;
-  font-family: 'Roboto', san-serif;
+  font-family: 'Manjari', sans-serif;
   font-size: 17px;
   margin-left: 35px;
+}
+
+.account-button:hover {
+  color: #00b248;
 }
 
 .header-group {
