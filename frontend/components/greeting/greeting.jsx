@@ -6,7 +6,6 @@ import './styles.scss';
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="header-links">
-      <Link className="link" to="/about">About</Link>
       <Link className="link" to="/login">Login</Link>
       <Link className="link" to="/signup">Sign up</Link>
     </nav>

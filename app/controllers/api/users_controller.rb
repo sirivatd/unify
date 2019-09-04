@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
-
+    @user.assign_attributes({ school_id: 1})
     if @user.save
       login(@user)
       render "api/users/show"
