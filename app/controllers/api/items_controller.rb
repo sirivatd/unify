@@ -1,6 +1,6 @@
 class Api::ItemsController < ApplicationController
   def index
-    @items = Item.where(school_id: current_user.school_id).order({ created_at: :desc }).limit(50)
+    @items = Item.where(school_id: current_user.school_id).reverse.first(50)
   end
 
   def show
@@ -14,6 +14,11 @@ class Api::ItemsController < ApplicationController
     @condition = Condition.find_by(name: item_params[:condition])
     @item = Item.new(name: item_params[:name], description: item_params[:description], price: item_params[:price], subtitle: item_params[:subtitle], condition_id: @condition&.id, category_id: @category&.id, school_id: current_user.school_id, user_id: current_user.id)
 
+    unless @images && @images.count > 0
+      @item.errors.add(:base, "Must upload at least one image")
+      render json: @item.errors.full_messages , status: 422
+      return
+    end
 
     if @item.save
       # create item images
